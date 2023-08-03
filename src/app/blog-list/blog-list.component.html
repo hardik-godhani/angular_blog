@@ -1,0 +1,4 @@
+<div *ngIf="blogs.length > 0">
+  <h2>Blog List</h2>
+  <app-blog *ngFor="let blog of blogs" [blogInput]="blog" (emitter)="onBlogLiked($event)"></app-blog>
+</div>
