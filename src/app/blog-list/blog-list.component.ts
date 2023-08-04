@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { BlogComponent } from './blog/blog.component';
 
 @Component({
   selector: 'app-blog-list',
@@ -6,38 +7,44 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog-list.component.scss']
 })
 export class BlogListComponent {
-  blogs: any[] = [
-    {
-      id: 1,
-      title: 'First Blog',
-      content: 'This is the content of the first blog.',
-      likeCount: 0
-    },
-    {
-      id: 2,
-      title: 'Second Blog',
-      content: 'This is the content of the second blog.',
-      likeCount: 0
-    },
-    {
-      id: 3,
-      title: 'Third Blog',
-      content: 'This is the content of the third blog.',
-      likeCount: 0
-    },
-  ];
+  @ViewChild('app_blog') header: BlogComponent = new BlogComponent();
 
-  onBlogLiked(blog: any) {
-    let tempBlog = [...this.blogs];
-    this.blogs = [];
-    tempBlog.forEach(el => {
-      if (el.id === blog.id) {
-        el.likeCount = el.likeCount + 1;
-      }
-    })
-    setTimeout(() => {
-      this.blogs = tempBlog;
-    }, 1000);
+  // blogs: any[] = [
+  //   {
+  //     id: 1,
+  //     title: 'First Blog',
+  //     content: 'This is the content of the first blog.',
+  //     likeCount: 0
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Second Blog',
+  //     content: 'This is the content of the second blog.',
+  //     likeCount: 0
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'Third Blog',
+  //     content: 'This is the content of the third blog.',
+  //     likeCount: 0
+  //   },
+  // ];
+
+  // onBlogLiked(blog: any) {
+  //   this.blogs.forEach(el => {
+  //     if (el.id === blog.id) {
+  //       el.likeCount = el.likeCount + 1;
+  //     }
+  //   })
+  //   if(this.header) {
+  //     this.header.nativeElement.innerText = blog.title;
+  //   }
+  // }
+
+  OnClickChange() {
+    if(this.header) {
+      this.header.blogInput.likeCount = "1000";
+    }
   }
 
 }

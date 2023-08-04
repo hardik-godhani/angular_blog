@@ -1,8 +1,8 @@
-<div>
+<div style="background-color: aquamarine;">
   <div class="title">
-    <h3>{{ blogInput.title }}</h3>
-    <p>{{ blogInput.likeCount }}  -  {{ randomNumber }}</p>
+    <h3>{{ blogInput?.title }}</h3>
+    <p>{{ blogInput?.likeCount }} </p>
   </div>
-  <p>{{ blogInput.content }}</p>
+  <p>{{ blogInput?.content }}</p>
   <button (click)="onLike()">Like</button>
 </div>

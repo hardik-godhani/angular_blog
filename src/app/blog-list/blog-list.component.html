@@ -1,4 +1,5 @@
-<div *ngIf="blogs.length > 0">
+<div>
   <h2>Blog List</h2>
-  <app-blog *ngFor="let blog of blogs" [blogInput]="blog" (emitter)="onBlogLiked($event)"></app-blog>
+  <app-blog #app_blog></app-blog>
+  <button (click)="OnClickChange()" style="margin-top: 15px;">Change It</button>
 </div>

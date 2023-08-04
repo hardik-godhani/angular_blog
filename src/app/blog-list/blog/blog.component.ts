@@ -6,12 +6,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent {
-  @Input() blogInput: any;
-  @Output() emitter: EventEmitter<any> = new EventEmitter();
-  randomNumber = Math.random();
+  blogInput = {
+    title: 'First Blog',
+    likeCount: '0',
+    content: 'ausydvbb asdb vasoid asidv fasid asidv ',
+  };
 
   onLike() {
-    this.emitter.emit(this.blogInput);
+
   }
 
 }
