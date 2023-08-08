@@ -1,1 +1,14 @@
 <router-outlet></router-outlet>
+
+
+<div *ngIf="!showContent">
+  <p>This is the content to be shown.</p>
+</div>
+
+<div *ngIf="!showContent">
+  <p>This content is hidden.</p>
+</div>
+
+<ng-container *ngIf="!showContent">
+  <p>This is the content to be shown.</p>
+</ng-container>

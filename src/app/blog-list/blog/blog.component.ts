@@ -6,11 +6,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent {
-  blogInput = {
-    title: 'First Blog',
-    likeCount: '0',
-    content: 'ausydvbb asdb vasoid asidv fasid asidv ',
-  };
+  @Input() blogInput!: any;
+  // blogInput = {
+  //   title: 'First Blog',
+  //   likeCount: '0',
+  //   content: 'ausydvbb asdb vasoid asidv fasid asidv ',
+  // };
 
   onLike() {
 
