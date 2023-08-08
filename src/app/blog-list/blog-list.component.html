@@ -1,5 +1,29 @@
+<div *ngIf="isLoggedIn; else helloMessage">
+  <p>Welcome Back, How you doing?</p>
+</div>
+
+<ng-container *ngTemplateOutlet="isLoggedIn ? welcomeMessage : helloMessage"></ng-container>
+
 <div>
   <h2>Blog List</h2>
-  <app-blog #app_blog></app-blog>
-  <button (click)="OnClickChange()" style="margin-top: 15px;">Change It</button>
+  <ng-container *ngIf="showBlog">
+    <app-blog *ngFor="let blog of blogs" [blogInput]="blog"></app-blog>
+  </ng-container>
+  <!-- <button (click)="OnClickChange()" style="margin-top: 15px;">Change It</button> -->
 </div>
+
+
+<ng-template #helloMessage>
+  <p>Hello Savalan this is from template</p>
+</ng-template>
+
+<ng-template #welcomeMessage>
+  <p>Welcome Back, How you doing?</p>
+</ng-template>
+
+<!-- <ng-template [ngTemplateOutlet]="helloMessage" [ngOutletContext]="context">
+</ng-template> -->
+
+Switch Case with template
+ng content
+contentChild
