@@ -1,29 +1,41 @@
-<div *ngIf="isLoggedIn; else helloMessage">
+<!-- <div *ngIf="isLoggedIn; else helloMessage">
   <p>Welcome Back, How you doing?</p>
 </div>
 
-<ng-container *ngTemplateOutlet="isLoggedIn ? welcomeMessage : helloMessage"></ng-container>
+<ng-container *ngTemplateOutlet="isLoggedIn ? welcomeMessage : helloMessage"></ng-container> -->
 
 <div>
   <h2>Blog List</h2>
-  <ng-container *ngIf="showBlog">
-    <app-blog *ngFor="let blog of blogs" [blogInput]="blog"></app-blog>
-  </ng-container>
-  <!-- <button (click)="OnClickChange()" style="margin-top: 15px;">Change It</button> -->
+  <app-blog>
+    <div class="header">
+      <p>this is coming from parent component.</p>
+    </div>
+    <div class="footer">
+      <button (click)="removeButton()">Remove</button>
+    </div>
+  </app-blog>
+  <!-- <app-blog>
+    <p>this is second app blog.</p>
+    <button (click)="removeButton()">Remove</button>
+    <button (click)="removeButton()">Add</button>
+  </app-blog> -->
+  <button (click)="OnClickChange()" style="margin-top: 15px;">Change It</button>
 </div>
 
 
-<ng-template #helloMessage>
+<!-- <ng-container *ngIf="showBlog"> -->
+<!-- </ng-container> -->
+<!-- <ng-template #helloMessage>
   <p>Hello Savalan this is from template</p>
 </ng-template>
 
 <ng-template #welcomeMessage>
   <p>Welcome Back, How you doing?</p>
-</ng-template>
+</ng-template> -->
 
 <!-- <ng-template [ngTemplateOutlet]="helloMessage" [ngOutletContext]="context">
 </ng-template> -->
 
-Switch Case with template
-ng content
+Switch Case with template - done
+ng content - done
 contentChild
