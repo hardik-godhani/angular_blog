@@ -12,6 +12,44 @@ export class BlogListComponent {
   showBlog = true;
   isLoggedIn = false;
 
+  players: any[] = [
+    {
+      name: "player1",
+      type: "bowler",
+      states: {
+        wickets: 100,
+        runRate: 10.5
+      }
+    },
+    {
+      name: "player2",
+      type: "batter",
+      states: {
+        runs: 1000,
+        fifty: 14
+      }
+    },
+    {
+      name: "player3",
+      type: "wicketKeeper",
+      states: {
+        stumps: 54
+      }
+    },
+    {
+      name: "player4",
+      type: null,
+      states: null
+    },
+    {
+      name: "player5",
+      type: "wicketKeeper",
+      states: {
+        stumps: 150
+      }
+    },
+  ];
+
   blogs: any[] = [
     {
       id: 1,

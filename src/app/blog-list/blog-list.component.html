@@ -1,4 +1,33 @@
-<div *ngIf="isLoggedIn; else helloMessage">
+<div>
+  <h1>Players</h1>
+</div>
+
+<div>
+  <div style="display: flex;" *ngFor="let player of players">
+    <div>name: {{ player.name }}</div>
+    <div>Type: {{ player.type }}</div>
+    <div [ngSwitch]="player.type">
+      <ng-container *ngSwitchCase="'bowler'">
+        <div>Wickets: {{ player?.states?.wickets }}</div>
+        <div>RunRate: {{ player?.states?.runRate }}</div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'wicketKeeper'">
+        <div>stumps: {{ player?.states?.stumps }}</div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'batter'">
+        <div>Runs: {{ player?.states?.runs }}</div>
+        <div>Fifty: {{ player?.states?.fifty }}</div>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <div>This player's states are not calculated.</div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div *ngIf="isLoggedIn; else helloMessage">
   <p>Welcome Back, How you doing?</p>
 </div>
 
@@ -9,7 +38,7 @@
   <ng-container *ngIf="showBlog">
     <app-blog *ngFor="let blog of blogs" [blogInput]="blog"></app-blog>
   </ng-container>
-  <!-- <button (click)="OnClickChange()" style="margin-top: 15px;">Change It</button> -->
+  <button (click)="OnClickChange()" style="margin-top: 15px;">Change It</button>
 </div>
 
 
@@ -19,11 +48,11 @@
 
 <ng-template #welcomeMessage>
   <p>Welcome Back, How you doing?</p>
-</ng-template>
+</ng-template> -->
 
 <!-- <ng-template [ngTemplateOutlet]="helloMessage" [ngOutletContext]="context">
 </ng-template> -->
 
-Switch Case with template
+<!-- Switch Case with template
 ng content
-contentChild
+contentChild -->
