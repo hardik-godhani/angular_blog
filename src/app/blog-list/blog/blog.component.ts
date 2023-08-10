@@ -14,14 +14,19 @@ export class BlogComponent {
     content: 'ausydvbb asdb vasoid asidv fasid asidv ',
   };
   @Input() name = '';
+  @Input() age = 25;
+
+  ngOnInit() {
+    debugger
+    if(this.paragraph) {
+      this.paragraph.nativeElement.innerText = "This is coming from ContentChild from onInit"
+    }
+  }
 
   ngOnChanges(changes: any) {
     debugger
-  }
-
-  ngOnInit() {
-    if(this.paragraph) {
-      this.paragraph.nativeElement.innerText = "This is coming from ContentChild from onInit"
+    if(this.name == 'hardik') {
+      this.blogInput.title = 'HARDIK'
     }
   }
 

@@ -9,6 +9,7 @@ import { BlogComponent } from './blog/blog.component';
 export class BlogListComponent {
   @ViewChild('app_blog') header: BlogComponent = new BlogComponent();
   name = '';
+  age = 25;
 
   showBlog = true;
   isLoggedIn = false;
