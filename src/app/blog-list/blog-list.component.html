@@ -6,9 +6,9 @@
 
 <div>
   <h2>Blog List</h2>
-  <app-blog>
+  <app-blog [name]="name">
     <div class="header">
-      <p>this is coming from parent component.</p>
+      <p #paragraph>this is coming from parent component.</p>
     </div>
     <div class="footer">
       <button (click)="removeButton()">Remove</button>
@@ -22,6 +22,9 @@
   <button (click)="OnClickChange()" style="margin-top: 15px;">Change It</button>
 </div>
 
+
+<input type="text" [(ngModel)]="name" >
+{{ name }}
 
 <!-- <ng-container *ngIf="showBlog"> -->
 <!-- </ng-container> -->
@@ -38,4 +41,4 @@
 
 Switch Case with template - done
 ng content - done
-contentChild
+contentChild - done

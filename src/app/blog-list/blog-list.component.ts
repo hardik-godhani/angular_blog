@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, Input } from '@angular/core';
 import { BlogComponent } from './blog/blog.component';
 
 @Component({
@@ -8,6 +8,7 @@ import { BlogComponent } from './blog/blog.component';
 })
 export class BlogListComponent {
   @ViewChild('app_blog') header: BlogComponent = new BlogComponent();
+  name = '';
 
   showBlog = true;
   isLoggedIn = false;
