@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogComponent } from './blog-list/blog/blog.component';
 import { FormsModule } from '@angular/forms';
+import { ViewChildComponent } from './view-child/view-child.component';
+import { LifecycleHookComponent } from './lifecycle-hook/lifecycle-hook.component';
+import { DemoComponent } from './lifecycle-hook/demo/demo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogListComponent,
-    BlogComponent
+    BlogComponent,
+    ViewChildComponent,
+    LifecycleHookComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
