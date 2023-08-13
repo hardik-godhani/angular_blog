@@ -5,16 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogComponent } from './blog-list/blog/blog.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogListComponent,
-    BlogComponent
+    BlogComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
