@@ -1,5 +1,9 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 
+<app-blog-list>
+  <app-blog [name]="name" *ngFor="let blog of blogs" [blogInput]="blog">
+  </app-blog>
+</app-blog-list>
 
 <div *ngIf="!showContent">
   <p>This is the content to be shown.</p>

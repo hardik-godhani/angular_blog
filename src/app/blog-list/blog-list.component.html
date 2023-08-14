@@ -6,14 +6,7 @@
 
 <div>
   <h2>Blog List</h2>
-  <app-blog [name]="name">
-    <div class="header">
-      <p #paragraph>this is coming from parent component.</p>
-    </div>
-    <div class="footer">
-      <button (click)="removeButton()">Remove</button>
-    </div>
-  </app-blog>
+  <ng-content></ng-content>
   <!-- <app-blog>
     <p>this is second app blog.</p>
     <button (click)="removeButton()">Remove</button>

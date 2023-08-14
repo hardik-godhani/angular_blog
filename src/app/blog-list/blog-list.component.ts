@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, Input } from '@angular/core';
+import { Component, ElementRef, ViewChild, Input, ContentChildren, QueryList } from '@angular/core';
 import { BlogComponent } from './blog/blog.component';
 
 @Component({
@@ -13,26 +13,17 @@ export class BlogListComponent {
   showBlog = true;
   isLoggedIn = false;
 
-  blogs: any[] = [
-    {
-      id: 1,
-      title: 'First Blog',
-      content: 'This is the content of the first blog.',
-      likeCount: 0
-    },
-    {
-      id: 2,
-      title: 'Second Blog',
-      content: 'This is the content of the second blog.',
-      likeCount: 0
-    },
-    {
-      id: 3,
-      title: 'Third Blog',
-      content: 'This is the content of the third blog.',
-      likeCount: 0
-    },
-  ];
+  @ContentChildren(BlogComponent) children!: QueryList<BlogComponent>;
+
+  constructor() {
+
+  }
+
+  ngAfterContentInit() {
+    if(this.children) {
+      return
+    }
+  }
 
   // onBlogLiked(blog: any) {
   //   this.blogs.forEach(el => {

@@ -6,29 +6,28 @@ import { Component, ContentChild, ElementRef, EventEmitter, Input, Output } from
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent {
-  @ContentChild('paragraph') paragraph: ElementRef = new ElementRef(null);
-  // @Input() blogInput!: any;
-  blogInput = {
-    title: 'First Blog',
-    likeCount: '0',
-    content: 'ausydvbb asdb vasoid asidv fasid asidv ',
-  };
+  // @ContentChild('paragraph') paragraph: ElementRef = new ElementRef(null);
+  @Input() blogInput!: any;
+  // blogInput = {
+  //   title: 'First Blog',
+  //   likeCount: '0',
+  //   content: 'ausydvbb asdb vasoid asidv fasid asidv ',
+  // };
   @Input() name = '';
 
   ngOnChanges(changes: any) {
-    debugger
   }
 
   ngOnInit() {
-    if(this.paragraph) {
-      this.paragraph.nativeElement.innerText = "This is coming from ContentChild from onInit"
-    }
+    // if(this.paragraph) {
+    //   this.paragraph.nativeElement.innerText = "This is coming from ContentChild from onInit"
+    // }
   }
 
   ngAfterContentInit() {
-    if(this.paragraph) {
-      this.paragraph.nativeElement.innerText = "This is coming from ContentChild afterContentInit"
-    }
+    // if(this.paragraph) {
+    //   this.paragraph.nativeElement.innerText = "This is coming from ContentChild afterContentInit"
+    // }
   }
 
   onLike() {
