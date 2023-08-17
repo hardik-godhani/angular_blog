@@ -43,7 +43,7 @@ export class BlogListComponent {
 
   // take
   // takeuntil
-  // mergeMap
+  // mergeMap - done
   // SwitchMap
 
   showBlog = true;
