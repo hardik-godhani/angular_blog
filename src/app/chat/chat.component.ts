@@ -20,11 +20,29 @@ export class ChatComponent {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.behaviorSub.next("1");
-    this.behaviorSub.next("2");
-    this.behaviorSub.subscribe((data: any) => {
-      console.log(data);
-    })
+    //Subject
+    const subject = new Subject();
+    subject.subscribe (d => console.log(`Subject Subscriber 1: ${d}`));
+    subject.next(30);
+
+    subject.subscribe(d => console.log(`Subject Subscriber2: ${d}`));
+    subject.next(40);
+
+    //BehaviorSubject
+    const bSubject = new BehaviorSubject<number>(15);
+    bSubject.subscribe(d => console.log(`BehaviorSubject Subscriber1: ${d}`));
+    bSubject.next(6000);
+    bSubject.subscribe(d => console.log(`BehaviorSubject Subscriber2: ${d}`));
+
+
+
+
+    // this.behaviorSub.subscribe((data: any) => {
+    //   console.log(data);
+    // });
+    // this.behaviorSub.next("1");
+    // this.behaviorSub.next("2");
+
 
 
 
